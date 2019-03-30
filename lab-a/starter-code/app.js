@@ -9,11 +9,11 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sum(a, b) { //eslint-disable-line
-  var output = [];
-  var total = a + b;
-  output.push(total);
-  output.push('The sum of ' + a + ' and ' + b + ' is ' + total + '.');
-  return output;
+  let sumAnswer = [];
+  let total = a + b;
+  sumAnswer.push(total);
+  sumAnswer.push('The sum of ' + a + ' and ' + b + ' is ' + total + '.');
+  return sumAnswer;
 }
 
 // Here is the test for sum(); uncomment it to run it
@@ -31,10 +31,11 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiply(a, b) { //eslint-disable-line
-  var output = [];
-  var total = a * b;
-  output.push(total, 'The product of ' + a + ' and ' + b + ' is ' + total + '.');
-  return output;
+  let multiplyAnswer = [];
+  let total = a * b;
+  multiplyAnswer.push(total);
+  multiplyAnswer.push('The product of ' + a + ' and ' + b + ' is ' + total + '.');
+  return multiplyAnswer;
 }
 
 // Here is the test for multiply(); uncomment it to run it
@@ -55,17 +56,16 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
-  var answer = [];
-  var sumAnswer = sum(sum(a, b)[0],c);
-  var multiplyAnswer = multiply(multiply(a, b)[0], c);
-  var third = a + ' and ' + b + ' and ' + c + ' sum to ' + sumAnswer[0] + '.';
-  var fourth = 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + multiplyAnswer[0] + '.';
-  answer.push(sumAnswer[0]);
-  answer.push(multiplyAnswer[0]);
-  answer.push(third);
-  answer.push(fourth);
-  console.log(answer);
-  return answer;
+  let sumAndMultiplyAnswer = [];
+  let sumAnswer = sum(sum(a, b)[0],c);
+  let multiplyAnswer = multiply(multiply(a, b)[0], c);
+  let third = a + ' and ' + b + ' and ' + c + ' sum to ' + sumAnswer[0] + '.';
+  let fourth = 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + multiplyAnswer[0] + '.';
+  sumAndMultiplyAnswer.push(sumAnswer[0]);
+  sumAndMultiplyAnswer.push(multiplyAnswer[0]);
+  sumAndMultiplyAnswer.push(third);
+  sumAndMultiplyAnswer.push(fourth);
+  return sumAndMultiplyAnswer;
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
@@ -87,13 +87,12 @@ Test this function by hand in the console to get it working, and when you think 
 var testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) { //eslint-disable-line
-  var answer = [];
-  var sumAnswer = sum(sum(sumArr[0], sumArr[1])[0],sumArr[2]);
-  var statement = sumArr[0] + ',' + sumArr[1] + ',' + sumArr[2] + ' was passed in as an array of numbers, and ' + sumAnswer[0] + ' is their sum.'
-  answer.push(sumAnswer[0]);
-  answer.push(statement)
-  console.log(answer);
-  return answer;
+  let sumArrayAnswer = [];
+  let sumAnswer = sum(sum(sumArr[0], sumArr[1])[0],sumArr[2]);
+  let statement = sumArr[0] + ',' + sumArr[1] + ',' + sumArr[2] + ' was passed in as an array of numbers, and ' + sumAnswer[0] + ' is their sum.'
+  sumArrayAnswer.push(sumAnswer[0]);
+  sumArrayAnswer.push(statement)
+  return sumArrayAnswer;
 }
 
 // Here is the test for sumArray(); uncomment it to run it
@@ -114,11 +113,17 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
-
+  let multiplyArrayAnswer = [];
+  let multiplyAnswer = multiply(multiply(multArr[0], multArr[1])[0],multArr[2]);
+  let statement = 'The numbers ' + multArr[0] + ',' + multArr[1] + ',' + multArr[2] + ' have a product of ' + multiplyAnswer[0] + '.'
+  multiplyArrayAnswer.push(multiplyAnswer[0]);
+  multiplyArrayAnswer.push(statement)
+  console.log(multiplyArrayAnswer);
+  return multiplyArrayAnswer;
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(testArray);
+testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
 
